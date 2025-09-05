@@ -1,4 +1,4 @@
 #! /bin/bash
 
-g++ main.cpp -lglfw -lGLEW -lGL -o deltaforce
+g++ main.cpp shader.cpp -lglfw -lGLEW -lGL -o deltaforce
 ./deltaforce
