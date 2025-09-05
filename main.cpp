@@ -36,7 +36,7 @@ int main() {
     }
 
     
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 1280, 720);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
@@ -71,8 +71,9 @@ Shader myshader("./shaders/vertexshader.glsl","./shaders/fragmentshader.glsl");
         processInput(window);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+          glBindVertexArray(VAO);
         myshader.use();
-        glBindVertexArray(VAO);
+      
         glDrawArrays(GL_TRIANGLES, 0,3);
       
 
