@@ -41,11 +41,22 @@
     glShaderSource(fragment,1 , &fshadercode, NULL);
     glCompileShader(fragment);
 
-    unsigned int shaderprogram;
+   
+
+    
     shaderprogram= glCreateProgram();
     glAttachShader(shaderprogram, vertex);
     glAttachShader(shaderprogram, fragment);
     glLinkProgram(shaderprogram);
+     int success;
+    char infolog[512];
+    glGetProgramiv(shaderprogram, GL_LINK_STATUS, &success);
+    if(!success){
+        glGetProgramInfoLog(shaderprogram, 512,NULL, infolog);
+        std::cout<<"Error in the compiling the files::"<<infolog <<std::endl;
+    };
+    std::cout<<"Imefika hapa"<<std::endl;
+
 
 
     glDeleteShader(vertex);
