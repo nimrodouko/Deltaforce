@@ -15,10 +15,10 @@ unsigned int shaderprogram;
 Shader (const char *vertexpath, const char* fragmentpath);
 void use();
 
-// //uniform functions
-// void setbool(const std::string &name, bool value) const;
-// void setint(const std::string &name, int value) const;
-// void setFloat(const std::string &name, float value)const;
+//uniform functions
+void setbool(const std::string &name, bool value) const;
+void setint(const std::string &name, int value) const;
+void setfloat(const std::string &name, float value)const;
 };
 
 #endif

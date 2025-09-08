@@ -2,8 +2,13 @@
 
 in vec3 ourColor;        // input from vertex shader
 out vec4 FragColor;      // final output color
+in vec2 ourText;
+
+uniform sampler2D texture1;
+
 
 void main()
 {
-    FragColor = vec4(ourColor, 1.0); // use interpolated color
+
+    FragColor = texture(texture1, ourText);
 }
